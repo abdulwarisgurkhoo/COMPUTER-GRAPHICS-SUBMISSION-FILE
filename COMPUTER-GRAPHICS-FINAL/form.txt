@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Form</title>
+    <style>
+        /* Minimal CSS for Styling */
+        body { 
+            font-family: sans-serif; 
+            padding: 20px;
+        }
+        form { 
+            /* Form Background Color and Border */
+            background-color: #f0f8ff; /* Light blue background */
+            border: 1px solid #4682b4; /* Steel blue border */
+            padding: 15px; 
+            border-radius: 5px; 
+            max-width: 350px; 
+        }
+        label { 
+            display: block; 
+            margin-top: 10px; 
+            font-weight: bold;
+        }
+        input, select, textarea { 
+            width: 100%; 
+            padding: 8px; 
+            margin-top: 5px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 3px; 
+            box-sizing: border-box; /* Makes padding included in the width */
+        }
+        input[type="submit"] { 
+            background-color: #4682b4; 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post">
+        <h3>Contact Details and Preferences</h3>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" 
+               required 
+               pattern="[A-Za-z\s]+" 
+               title="Letters and spaces only.">
+
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" 
+               required 
+               pattern="[0-9]{10}" 
+               title="Must be 10 digits (0-9).">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" 
+               required 
+               title="Must be a valid email address.">
+        
+        <label for="color">Favorite Color:</label>
+        <select id="color" name="color" required>
+            <option value="" disabled selected>-- Select --</option>
+            <option value="R">Red</option>
+            <option value="B">Blue</option>
+            <option value="G">Green</option>
+        </select>
+        
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="3"></textarea>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
